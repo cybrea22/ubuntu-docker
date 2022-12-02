@@ -2,6 +2,8 @@
 # Build a Docker image
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
+trigger: none
+
 resources:
 - repo: self
 
@@ -14,7 +16,7 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool: 12
+    pool: Default
     steps:
     - task: Docker@2
       displayName: Build an image
